@@ -1,29 +1,55 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <side-nav></side-nav>
+    <div class="app-wrap">
+    <top-nav></top-nav>
+    <div class="app-content">
+        <router-view/>
     </div>
-    <router-view/>
+    </div>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script>
+import sideNav from '@/components/nav'
+import topNav from '@/components/top-nav'
+export default {
+  name: 'app',
+  components: {
+      sideNav,
+      topNav
+  },
+  props: {
   }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style  lang="scss">
+* {
+  box-sizing: border-box;
+}
+body {
+  margin:0;
+  padding:0;
+  font-family: 'Rubik', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+#app {
+    display: flex;
+}
+
+.app-wrap {
+    display: flex;
+    flex-direction: column;
+    flex:1;
+}
+
+.app-content {
+    display: flex;
+    flex:1;
+    padding: 24px;
+    height: calc(100vh - 80px);
 }
 </style>
