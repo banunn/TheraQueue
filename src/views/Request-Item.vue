@@ -73,7 +73,7 @@
 
 <script>
 import { statusTypes } from "@/data/data.js";
-import db from '@/main.js'
+import {db} from '@/main.js'
 import notePanel from '@/components/notes/panel'
 import widget from '@/components/widget'
 export default {

@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import db from '@/main.js'
+import {db} from '@/main.js'
 import queueList from '@/components/list/list'
 export default {
   name: 'Queue-Page',

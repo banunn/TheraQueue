@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.4.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.2a6d2ad1d1ec3cc0f9d782ee13d300a7.js"
+  "/precache-manifest.d6f92a341b304c2539e976c1f27c9fb8.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "thera-queue"});

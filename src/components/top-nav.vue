@@ -10,7 +10,7 @@ export default {
   props: {},
   methods: {
     login() {
-      this.$store.dispatch('login');
+      this.$router.push('/auth');
     }
   }
 };

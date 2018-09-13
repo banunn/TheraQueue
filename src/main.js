@@ -28,6 +28,28 @@ firebase.initializeApp({
   messagingSenderId: "1912252840"
 });
 
+let db = firebase.firestore();
+let auth = firebase.auth();
+console.log(auth);
+const settings = {/* your settings... */ timestampsInSnapshots: true};
+db.settings(settings);
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+    console.log(user.uid);
+    store.commit('setUser', user.uid);
+  } else {
+    // No user is signed in.
+    console.log('There Is Not');
+  }
+});
+
+
+export {
+  db, 
+  auth
+}
 
 
 new Vue({
@@ -36,8 +58,6 @@ new Vue({
   render: h => h(App)
 }).$mount('#app')
 
-const db = firebase.firestore();
-const settings = {/* your settings... */ timestampsInSnapshots: true};
-db.settings(settings);
 
-export default db;
+
+router.replace('/auth');

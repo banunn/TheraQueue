@@ -11,7 +11,7 @@
 <script>
 import noteInput from './input';
 import noteList from './list'
-import db from '@/main.js'
+import {db} from '@/main.js'
 export default {
   name: "note-panel",
   props: {},

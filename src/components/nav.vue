@@ -1,7 +1,7 @@
 <template>
   <nav class="nav">
       <header class="brand">
-          <router-link to="/">
+          <router-link to="/auth">
             <img src="../assets/logo.svg" alt="">
           </router-link>
       </header>
@@ -10,15 +10,24 @@
               <i class="material-icons">add</i>
               Make A Request
           </router-link>
-          <router-link to="/queue" class="nav-link">Manage Queue</router-link>
+          <router-link v-if="user" to="/queue" class="nav-link">Manage Queue</router-link>
       </aside>
   </nav>
 </template>
 
 <script>
+import {auth} from '@/main'
 export default {
   name: 'Main_Navigation',
   props: {
+  },
+  computed: {
+      user() { 
+          return this.$store.state.user;
+      }
+  },
+  created() {
+      console.log(auth);
   }
 }
 </script>

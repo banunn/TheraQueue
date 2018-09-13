@@ -9,11 +9,12 @@ export default new Vuex.Store({
     toast: {
       open: false,
       content: ''
-    }
+    },
+    user: null
   },
   mutations: {
-    setUser(state, payload) {
-      
+    setUser(state, user) {
+      state.user = user;
     }
   },
   actions: {

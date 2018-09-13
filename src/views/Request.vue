@@ -177,7 +177,7 @@
 
 <script>
 import { campuses, requestTypes } from "@/data/data.js";
-import db from "@/main.js";
+import {db} from "@/main.js";
 import FileHolder from "@/models/models.js";
 export default {
   data() {
